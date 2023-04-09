@@ -5,7 +5,7 @@ I recently had to change my laptop battery because it was swolen. One of the mai
 
 I created a cronjob that runs the bot script whenever my laptop restarts.
 
-#####  Installation:
+###  Installation:
 
 ```bash
 git clone https://github.com/anuphw/BatteryProtector.git
@@ -22,3 +22,19 @@ pip install telebot
 ```bash
 python battery_bot.py
 ```
+
+### Set up cronjob
+```bash
+crontab -e
+``` 
+
+Create a new cronjob like the following
+```bash
+@reboot <path-to-python> <path-to-battery_bot.py>
+```
+
+*for example*
+```bash
+@reboot /home/anup/BatteryProtector/venv/bin/python /home/anup/BatteryProtector/battery_bot.py
+```
+
